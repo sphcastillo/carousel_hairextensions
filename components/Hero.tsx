@@ -20,7 +20,7 @@ const poppins_light = Poppins({ weight: "300", subsets: ["latin"] });
 
 const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
 
-const HeroComponent = () => {
+const Hero = () => {
   const [doorsOpen, setDoorsOpen] = useState(false);
 
   // Automatically open doors after component mounts
