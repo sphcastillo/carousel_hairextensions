@@ -140,7 +140,7 @@ const Hero = () => {
         {/* This adds a semi-transparent black overlay */}
         <div className="relative z-20">
           <h1
-            className={`${lobster.className} text-[21px] md:text-6xl font-bold mb-4 pl-1 text-white sm:text-center pt-4`}
+            className={`${lobster.className} text-[20px] md:text-6xl font-bold mb-4 pl-1 text-white sm:text-center pt-4`}
           >
             R.I.P. Bad Hair Days
           </h1>
@@ -151,7 +151,7 @@ const Hero = () => {
             extensions designed to enhance your natural beauty and express your
             unique style.
           </p>
-          <div className="flex items-center sm:justify-center pl-[4px] sm:pl-0 pb-4">
+          <div className="flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
             <a
               href="#cta"
               className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#f8a1b2] text-white px-3 sm:px-6 py-2 sm:py-3 uppercase rounded-none text-sm sm:text-lg transition duration-300`}

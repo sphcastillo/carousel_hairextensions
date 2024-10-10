@@ -1,5 +1,6 @@
 import BrightClouds from "@/components/BrightClouds";
 import Cloud from "@/components/Cloud";
+import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
 import InfoSection from "@/components/InfoSection";
 import IntroSection from "@/components/IntroSection";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <main className="max-w-7xl mx-auto bg-white">
       <Hero />
+      <Feature />
       {/* <Hero /> */}
       {/* <UnevenClouds /> */}
       {/* <IntroSection /> */}
