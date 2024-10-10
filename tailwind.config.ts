@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		screens: {
+			xxs: "414px",
+			xs: "540px",
+		},
   		keyframes: {
   			spin: {
   				'0%': {

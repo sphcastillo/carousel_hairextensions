@@ -8,6 +8,7 @@ import Image from "next/image";
 import furyLeft from "@/images/left.jpg";
 import furyRight from "@/images/right.jpg";
 import { Lobster, Lora, Poppins } from "next/font/google";
+import carouselVerticalHero from "@/images/gitzVeticalHero.jpg";
 
 const lobster = Lobster({ weight: "400", subsets: ["latin"] });
 
@@ -32,12 +33,27 @@ const HeroComponent = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-full h-[835px] overflow-hidden bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${carouselHero.src})`,
-      }}
-    >
+    <div className="relative w-full h-[624px] sm:h-[835px] overflow-hidden bg-cover bg-center">
+      {/* Background Image */}
+      <Image
+        src={carouselHero}
+        alt="Carousel Hero"
+        layout="fill" // This makes the image fill the parent container
+        objectFit="cover" // Ensures the image behaves like a background image
+        objectPosition="center" // Optional: centers the image like a background-position
+        className="hidden sm:block" // Show only on screens larger than 640px
+      />
+
+      {/* Background Image for Small Screens */}
+      <Image
+        src={carouselVerticalHero}
+        alt="Carousel Vertical Hero"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="block sm:hidden" // Show only on screens smaller than 640px
+      />
+
       {/* Left Door */}
       <motion.div
         className="absolute top-0 left-0 w-1/2 h-full z-50"
@@ -66,7 +82,7 @@ const HeroComponent = () => {
 
       {/* Carousel */}
       <motion.div
-        className={`absolute inset-0 w-full h-full left-[205px] top-0 ${
+        className={`absolute inset-0 w-full h-full top-[397px] left-14 sm:left-[205px] sm:top-0 ${
           doorsOpen ? "visible" : "invisible"
         }`}
         initial={{ scale: 0 }}
@@ -74,7 +90,7 @@ const HeroComponent = () => {
         transition={{ duration: 1.5, delay: 1.5 }}
       >
         <div
-          className="relative w-64 h-64" // Remove the border and rounded styles
+          className="relative w-52 h-52 sm:w-64 sm:h-64" // Remove the border and rounded styles
           style={{ perspective: "1000px" }} // 3D perspective
         >
           {/* Replace circle with the nonhorsecarousel image */}
@@ -97,7 +113,7 @@ const HeroComponent = () => {
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-18 h-18 flex items-center justify-center pt-10"
+                className="absolute w-16 h-16 sm:w-18 sm:h-18 flex items-center justify-center pt-10"
                 style={{
                   transform: `rotateY(${i * (360 / 5)}deg) translateZ(60px)`, // Circular positioning
                   transformOrigin: "bottom center", // Ground the horse to the bottom center
@@ -118,27 +134,27 @@ const HeroComponent = () => {
 
       {/* Content Overlay */}
 
-      <div className="absolute right-72 w-1/2 text-white z-20 left-4 top-[256px]">
+      <div className="absolute right-72 w-3/5 sm:w-1/2 text-white z-20 left-1 sm:left-4 top-3 sm:top-[256px]">
         {/* Overlay with lower opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10 rounded-3xl border-2 shadow-2xl" />{" "}
+        <div className="absolute inset-0 bg-black bg-opacity-0 sm:bg-opacity-50 z-10 rounded-3xl sm:border-2 shadow-2xl" />{" "}
         {/* This adds a semi-transparent black overlay */}
         <div className="relative z-20">
           <h1
-            className={`${lobster.className} text-4xl md:text-6xl font-bold mb-4 text-[#fadde1] text-center pt-4`}
+            className={`${lobster.className} text-[21px] md:text-6xl font-bold mb-4 pl-1 text-white sm:text-center pt-4`}
           >
             R.I.P. Bad Hair Days
           </h1>
           <p
-            className={`${poppins_light.className} text-[21px] mb-6 text-center px-6 text-[#fadde1] `}
+            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[21px] mb-3 sm:mb-6 pr-24 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
           >
             At Carousel Hair Extensions, we offer high-quality, custom-crafted
             extensions designed to enhance your natural beauty and express your
             unique style.
           </p>
-          <div className="flex items-center justify-center pb-4">
+          <div className="flex items-center sm:justify-center pl-[4px] sm:pl-0 pb-4">
             <a
               href="#cta"
-              className={`${poppins_medium.className} hover:bg-[#f7bacb] bg-[#f8a1b2] text-white px-6 py-3 uppercase rounded-none text-lg transition duration-300`}
+              className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#f8a1b2] text-white px-3 sm:px-6 py-2 sm:py-3 uppercase rounded-none text-sm sm:text-lg transition duration-300`}
             >
               Show me the magic
             </a>
