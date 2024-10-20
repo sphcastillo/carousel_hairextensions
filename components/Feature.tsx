@@ -6,9 +6,20 @@ import {
     LockClosedIcon,
     ServerIcon,
   } from '@heroicons/react/20/solid';
-  import GlitzFeaturette from "@/images/glitzFeaturette.jpg";
-  import Image from "next/image";
-  import stars from "@/images/logo/pinkStars.png";
+import GlitzFeaturette from "@/images/glitzFeaturette.jpg";
+import Image from "next/image";
+import stars from "@/images/logo/pinkStars.png";
+import { Lobster, Lora, Poppins } from "next/font/google";
+
+const lobster = Lobster({ weight: "400", subsets: ["latin"] });
+
+const lora_regular = Lora({ weight: "400", subsets: ["latin"] });
+
+const lora_semibold = Lora({ weight: "600", subsets: ["latin"] });
+
+const poppins_light = Poppins({ weight: "300", subsets: ["latin"] });
+
+const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
   
   const features = [
     {

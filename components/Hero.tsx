@@ -38,14 +38,16 @@ const Hero = () => {
       <Image
         src={carouselHorizontalHero}
         alt="Carousel Hero"
-        className="hidden sm:block object-cover h-full "
+        className="hidden sm:block object-cover h-full"
+        priority
       />
 
       {/* Background Image for Small Screens */}
       <Image
         src={carouselVerticalHero}
         alt="Carousel Vertical Hero"
-        className="block sm:hidden object-cover" // Show only on screens smaller than 640px
+        className="block sm:hidden object-cover h-[480px]" // Show only on screens smaller than 640px
+        priority
       />
 
       {/* Left Door */}
@@ -55,7 +57,14 @@ const Hero = () => {
         animate={{ x: doorsOpen ? "-100%" : 0 }}
         transition={{ duration: 1.5 }}
       >
-        <Image src={furyLeft} alt="Fury Left Door" width={1151} height={2048} />
+        <Image 
+          src={furyLeft} 
+          alt="Fury Left Door" 
+          width={1151} 
+          height={2048} 
+          priority
+          className="h-[480px]"
+          />
       </motion.div>
 
       {/* Right Door */}
@@ -70,6 +79,8 @@ const Hero = () => {
           alt="Fury Right Door"
           width={1151}
           height={2048}
+          priority
+          className="h-[480px]"
         />
       </motion.div>
 
@@ -93,6 +104,7 @@ const Hero = () => {
             width={256}
             height={256}
             className="absolute inset-0 object-cover" // Ensure the image covers the area
+            priority
           />
 
           {/* Rotating horses */}
@@ -118,6 +130,7 @@ const Hero = () => {
                   width={104}
                   height={104}
                   className="object-contain"
+                  priority
                 />
               </div>
             ))}
@@ -132,14 +145,19 @@ const Hero = () => {
         <div className="absolute " />{" "}
         {/* This adds a semi-transparent black overlay */}
         <div className="relative z-20">
+
+          <div className="absolute w-[200px] leading-snug left-44 top-16">
           <h1
-            className={`${lobster.className} text-[20px] md:text-5xl font-bold mb-4 text-white sm:text-center pt-4`}
-            style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
+            className={`${lobster.className} text-[26px] text-black`}
+            // style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
           >
-            R.I.P. Bad Hair Days
-          </h1>
+            
+            R.I.P. 
+          </h1>{" "} 
+          <h1 className={`${lobster.className} text-[30px] text-black`}>Bad Hair Days</h1>
+          </div>
           <p
-            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-24 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
+            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-16 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
             style={{transform: "perspective(600px) rotateX(0deg) rotateY(15deg)"}}
           >
             At Carousel Hair Extensions, we offer high-quality, custom-crafted

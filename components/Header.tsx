@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -24,48 +23,68 @@ export default function Header() {
     <header className="bg-[#f9d1de] mx-auto max-w-7xl top-0 sticky z-50">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
       >
-        <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Image
-              alt="Carousel Hair Extensions"
-              src={CarouselHairExtensionsLOGO}
-              className="h-14 w-auto"
-              width={200}
-              height={170}
-            />
-          </a>
-        </div>
-        <div className="flex lg:hidden">
+        {/* Bars3Icon button on the far left */}
+        <div className="flex md:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className={`${poppins_semibold.className} text-sm tracking-wider font-semibold leading-6 text-[gray-800]`}
-            >
-              {item.name}
-            </a>
-          ))}
+
+        {/* Navigation links for large screens */}
+        <div className="hidden md:flex md:gap-x-5 md:justify-start">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Carousel Hair Extensions</span>
+            <Image
+              alt="Carousel Hair Extensions"
+              src={CarouselHairExtensionsLOGO}
+              className=""
+              width={200}
+              height={170}
+            />
+          </a>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+
+        {/* Logo centered */}
+        <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="md:hidden">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Carousel Hair Extensions</span>
+              <Image
+                alt="Carousel Hair Extensions"
+                src={CarouselHairExtensionsLOGO}
+                className=""
+                width={200}
+                height={170}
+              />
+            </a>
+          </div>
+          <div className="space-x-6">
+            {navigation.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className={`${poppins_semibold.className} text-sm tracking-wider font-semibold leading-6 text-[gray-800]`}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Log in button on the far right */}
+        <div className="flex flex-1 justify-end">
           <a
             href="#"
-            className={`${poppins_medium.className} text-sm tracking-widest font-semibold leading-6 text-gray-900`}
+            className={`${poppins_medium.className} px-3 text-xs xs:text-sm tracking-widest font-semibold leading-6 text-gray-900`}
           >
             Log in
-            {/* <span aria-hidden="true">&rarr;</span> */}
           </a>
         </div>
       </nav>
