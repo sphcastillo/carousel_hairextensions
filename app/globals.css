@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  cursor: url('/images/featherHeart.png'), auto;
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex; /* Align items in a row */
+    animation: marquee 10s linear infinite; /* Infinite animation */
+    white-space: nowrap; /* Keep elements on one line */
+  }
 }

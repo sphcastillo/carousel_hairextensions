@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner";
 import BrightClouds from "@/components/BrightClouds";
 import Cloud from "@/components/Cloud";
 import Feature from "@/components/Feature";
@@ -12,8 +13,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto bg-white">
+    <main className="max-w-7xl mx-auto bg-[#fcfcfc] custom-cursor">
       <Hero />
+      <Banner />
       <Feature />
       {/* <Hero /> */}
       {/* <UnevenClouds /> */}

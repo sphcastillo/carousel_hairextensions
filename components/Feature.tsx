@@ -20,50 +20,45 @@ const lora_semibold = Lora({ weight: "600", subsets: ["latin"] });
 const poppins_light = Poppins({ weight: "300", subsets: ["latin"] });
 
 const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
+
+const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
   
   const features = [
     {
-      name: 'Push to deploy.',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-      icon: CloudArrowUpIcon,
+      name: 'A Whimsical World of Beauty:',
+      description: 'Step into Breanna’s creative vision, where vintage aesthetics meet modern hair trends. Carousel Hair Extensions is a pink-hued haven that celebrates individuality, creativity, and timeless style.',
     },
     {
-      name: 'SSL certificates.',
-      description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-      icon: LockClosedIcon,
+      name: 'Over 20 Years of Expertise:',
+      description: 'With over two decades of experience in the hair industry, Breanna brings unparalleled knowledge and skill to every client. Whether it’s hair extensions or styling advice, you’re in expert hands.',
     },
     {
-      name: 'Simple queues.',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-      icon: ArrowPathIcon,
+      name: 'Premium Hair Extensions:',
+      description: 'Carousel Hair Extensions offers a handpicked selection of premium extensions in a variety of lengths, textures, and colors, all designed to help you transform your look with ease and confidence.',
     },
     {
-      name: 'Advanced security.',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-      icon: FingerPrintIcon,
+      name: 'A Personalized Experience:',
+      description: 'Breanna believes in crafting a personalized experience for every client. From color matching to styling tips, she’s here to ensure your hair journey is uniquely yours.',
     },
     {
-      name: 'Powerful API.',
-      description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-      icon: Cog6ToothIcon,
+      name: ' Vintage Meets Modern Style',
+      description: 'Inspired by a love for all things vintage, Breanna has curated a space that blends old-school charm with the latest hair trends, offering a unique aesthetic that’s both playful and sophisticated.',
     },
     {
-      name: 'Database backups.',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-      icon: ServerIcon,
+      name: 'Fashion Beyond Hair',
+      description: 'Carousel Hair Extensions isn’t just about hair—it’s a lifestyle. Discover our collection of stylish t-shirts and hoodies, each designed with the same creative flair that defines our brand.',
     },
   ]
   
   export default function Feature() {
     return (
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-[#fadde1] py-12 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">Everything you need</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">No server? No problem.</p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste
-              dolor cupiditate blanditiis.
+            <h2 className={`${lobster.className} text-xl font-semibold leading-7 text-black`}>R.I.P. Bad Hair Days</h2>
+            <p className={`${poppins_semibold.className} mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}>Welcome to Carousel Hair Extensions: A Whimsical World of Style & Beauty</p>
+            <p className={`${poppins_light.className} mt-6 text-lg leading-8 text-gray-600`}>
+            Breanna has transformed her space into a whimsical oasis filled with vintage treasures and trinkets, where every detail tells a story. Here, you’ll find not only expert hair care and stunning extensions but also a sense of playfulness and individuality. Whether you’re looking to add length and volume to your hair or snag one of our fun, stylish t-shirts and hoodies, Carousel Hair Extensions is your destination for all things beauty.
             </p>
           </div>
         </div>
@@ -85,11 +80,11 @@ const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
           <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-9">
-                <dt className="inline font-semibold text-gray-900">
+                <dt className={`${poppins_semibold.className} inline font-semibold text-gray-900`}>
                   <Image src={stars} alt='Pink Stars' className="absolute left-1 top-1 h-5 w-5" />
                   {feature.name}
                 </dt>{' '}
-                <dd className="inline">{feature.description}</dd>
+                <dd className={`${poppins_light.className} inline text-gray-500 ml-1`}>{feature.description}</dd>
               </div>
             ))}
           </dl>

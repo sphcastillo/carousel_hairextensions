@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[624px] sm:h-[835px] overflow-hidden bg-cover bg-center">
+    <div className="relative w-full sm:h-[835px] overflow-hidden bg-cover bg-center">
       {/* Background Image */}
       <Image
         src={carouselHorizontalHero}
@@ -46,7 +46,7 @@ const Hero = () => {
       <Image
         src={carouselVerticalHero}
         alt="Carousel Vertical Hero"
-        className="block sm:hidden object-cover h-[480px]" // Show only on screens smaller than 640px
+        className="block sm:hidden object-cover h-[480px] xxs:h-[500px] xs:h-[580px]"
         priority
       />
 
@@ -63,7 +63,7 @@ const Hero = () => {
           width={1151} 
           height={2048} 
           priority
-          className="h-[480px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px]"
           />
       </motion.div>
 
@@ -80,13 +80,13 @@ const Hero = () => {
           width={1151}
           height={2048}
           priority
-          className="h-[480px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px]"
         />
       </motion.div>
 
       {/* Carousel */}
       <motion.div
-        className={`absolute inset-0 w-full h-full top-[537px] left-[615px] ${
+        className={`absolute inset-0 w-full h-full hidden sm:block lg:top-[537px] lg:left-[615px] ${
           doorsOpen ? "visible" : "invisible"
         }`}
         initial={{ scale: 0 }}
@@ -148,26 +148,26 @@ const Hero = () => {
 
           <div className="absolute w-[200px] leading-snug left-44 top-16">
           <h1
-            className={`${lobster.className} text-[26px] text-black`}
+            className={`${lobster.className} hidden text-[26px] text-white`}
             // style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
           >
             
-            R.I.P. 
+            Welcome to
           </h1>{" "} 
-          <h1 className={`${lobster.className} text-[30px] text-black`}>Bad Hair Days</h1>
+          <h1 className={`${lobster.className} hidden text-[30px] text-white`}>Carousel Hair Extensions</h1>
           </div>
           <p
-            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-16 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
+            className={`${poppins_light.className} hidden text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-16 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
             style={{transform: "perspective(600px) rotateX(0deg) rotateY(15deg)"}}
           >
             At Carousel Hair Extensions, we offer high-quality, custom-crafted
             extensions designed to enhance your natural beauty and express your
             unique style.
           </p>
-          <div className="flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
+          <div className="absolute top-32 left-6 flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
             <a
-              href="#cta"
-              className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#f8a1b2] text-white px-3 sm:px-6 py-2 sm:py-3 uppercase rounded-none text-sm sm:text-lg transition duration-300`}
+              href="/"
+              className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#ffa6c1] text-white px-3 sm:px-6 py-2 sm:py-3 rounded-2xl border-white border-2 text-sm shadow-xl sm:text-lg transition duration-300`}
               style={{transform: "perspective(470px) rotateX(0deg) rotateY(1deg)"}}
             >
               Show me the magic

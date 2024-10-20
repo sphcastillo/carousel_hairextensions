@@ -20,7 +20,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#f9d1de] mx-auto max-w-7xl top-0 sticky z-50">
+    <header className="bg-[#ffc4d6] mx-auto max-w-7xl top-0 sticky z-50">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
@@ -37,7 +37,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Navigation links for large screens */}
         <div className="hidden md:flex md:gap-x-5 md:justify-start">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Carousel Hair Extensions</span>
@@ -65,7 +64,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="space-x-6">
+          {/* <div className="space-x-6">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -75,7 +74,7 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Log in button on the far right */}
