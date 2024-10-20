@@ -8,6 +8,7 @@ import {
   } from '@heroicons/react/20/solid';
   import GlitzFeaturette from "@/images/glitzFeaturette.jpg";
   import Image from "next/image";
+  import stars from "@/images/logo/pinkStars.png";
   
   const features = [
     {
@@ -74,7 +75,7 @@ import {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-9">
                 <dt className="inline font-semibold text-gray-900">
-                  <feature.icon aria-hidden="true" className="absolute left-1 top-1 h-5 w-5 text-indigo-600" />
+                  <Image src={stars} alt='Pink Stars' className="absolute left-1 top-1 h-5 w-5" />
                   {feature.name}
                 </dt>{' '}
                 <dd className="inline">{feature.description}</dd>

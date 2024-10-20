@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-white">
+      <body className="bg-white max-w-6xl mx-auto">
         <Header />
         {children}
         {/* <Footer /> */}

@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import carouselhorse from "@/images/carouselhair.png";
 import nonhorsecarousel from "@/images/nonhorsecarousel.png";
-import carouselHero from "@/images/CarouselHero.jpg";
-import Image from "next/image";
-import furyLeft from "@/images/left.jpg";
-import furyRight from "@/images/right.jpg";
-import { Lobster, Lora, Poppins } from "next/font/google";
+import carouselHorizontalHero from "@/images/homepage/CarouselHero.jpg";
 import carouselVerticalHero from "@/images/gitzVeticalHero.jpg";
+import Image from "next/image";
+import furyLeft from "@/images/homepage/goldenLeftborder.png";
+import furyRight from "@/images/homepage/goldenRightborder.png";
+import { Lobster, Lora, Poppins } from "next/font/google";
 
 const lobster = Lobster({ weight: "400", subsets: ["latin"] });
 
@@ -36,53 +36,46 @@ const Hero = () => {
     <div className="relative w-full h-[624px] sm:h-[835px] overflow-hidden bg-cover bg-center">
       {/* Background Image */}
       <Image
-        src={carouselHero}
+        src={carouselHorizontalHero}
         alt="Carousel Hero"
-        layout="fill" // This makes the image fill the parent container
-        objectFit="cover" // Ensures the image behaves like a background image
-        objectPosition="center" // Optional: centers the image like a background-position
-        className="hidden sm:block" // Show only on screens larger than 640px
+        className="hidden sm:block object-cover h-full "
       />
 
       {/* Background Image for Small Screens */}
       <Image
         src={carouselVerticalHero}
         alt="Carousel Vertical Hero"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        className="block sm:hidden" // Show only on screens smaller than 640px
+        className="block sm:hidden object-cover" // Show only on screens smaller than 640px
       />
 
       {/* Left Door */}
       <motion.div
-        className="absolute top-0 left-0 w-1/2 h-full z-50"
-        style={{
-          background: `url(${furyLeft.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="absolute top-0 left-0 w-1/2 z-50"
         initial={{ x: 0 }}
         animate={{ x: doorsOpen ? "-100%" : 0 }}
         transition={{ duration: 1.5 }}
-      />
+      >
+        <Image src={furyLeft} alt="Fury Left Door" width={1151} height={2048} />
+      </motion.div>
 
       {/* Right Door */}
       <motion.div
-        className="absolute top-0 right-0 w-1/2 h-full z-50"
-        style={{
-          background: `url(${furyRight.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="absolute top-0 right-0 w-1/2  z-50"
         initial={{ x: 0 }}
         animate={{ x: doorsOpen ? "100%" : 0 }}
         transition={{ duration: 1.5 }}
-      />
+      >
+        <Image
+          src={furyRight}
+          alt="Fury Right Door"
+          width={1151}
+          height={2048}
+        />
+      </motion.div>
 
       {/* Carousel */}
       <motion.div
-        className={`absolute inset-0 w-full h-full top-[397px] left-14 sm:left-[205px] sm:top-0 ${
+        className={`absolute inset-0 w-full h-full top-[537px] left-[615px] ${
           doorsOpen ? "visible" : "invisible"
         }`}
         initial={{ scale: 0 }}
@@ -134,18 +127,20 @@ const Hero = () => {
 
       {/* Content Overlay */}
 
-      <div className="absolute right-72 w-3/5 sm:w-1/2 text-white z-20 left-1 sm:left-4 top-3 sm:top-[256px]">
+      <div className="absolute right-72 w-3/5 sm:w-1/2 text-white z-20 left-1 sm:left-4 top-3 sm:top-2">
         {/* Overlay with lower opacity */}
-        <div className="absolute inset-0 bg-black bg-opacity-0 sm:bg-opacity-50 z-10 rounded-3xl sm:border-2 shadow-2xl" />{" "}
+        <div className="absolute " />{" "}
         {/* This adds a semi-transparent black overlay */}
         <div className="relative z-20">
           <h1
-            className={`${lobster.className} text-[20px] md:text-6xl font-bold mb-4 pl-1 text-white sm:text-center pt-4`}
+            className={`${lobster.className} text-[20px] md:text-5xl font-bold mb-4 text-white sm:text-center pt-4`}
+            style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
           >
             R.I.P. Bad Hair Days
           </h1>
           <p
-            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[21px] mb-3 sm:mb-6 pr-24 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
+            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-24 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
+            style={{transform: "perspective(600px) rotateX(0deg) rotateY(15deg)"}}
           >
             At Carousel Hair Extensions, we offer high-quality, custom-crafted
             extensions designed to enhance your natural beauty and express your
@@ -155,6 +150,7 @@ const Hero = () => {
             <a
               href="#cta"
               className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#f8a1b2] text-white px-3 sm:px-6 py-2 sm:py-3 uppercase rounded-none text-sm sm:text-lg transition duration-300`}
+              style={{transform: "perspective(470px) rotateX(0deg) rotateY(1deg)"}}
             >
               Show me the magic
             </a>
