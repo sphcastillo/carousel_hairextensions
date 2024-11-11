@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full sm:h-[835px] overflow-hidden bg-cover bg-center">
+    <div className="relative w-full sm:h-[500px] md:h-[620px] overflow-hidden bg-cover bg-center">
       {/* Background Image */}
       <Image
         src={carouselHorizontalHero}
@@ -63,7 +63,7 @@ const Hero = () => {
           width={1151} 
           height={2048} 
           priority
-          className="h-[480px] xxs:h-[500px] xs:h-[580px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px]"
           />
       </motion.div>
 
@@ -80,13 +80,13 @@ const Hero = () => {
           width={1151}
           height={2048}
           priority
-          className="h-[480px] xxs:h-[500px] xs:h-[580px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px]"
         />
       </motion.div>
 
       {/* Carousel */}
       <motion.div
-        className={`absolute inset-0 w-full h-full hidden sm:block lg:top-[537px] lg:left-[615px] ${
+        className={`absolute inset-0 w-full h-full hidden  lg:top-[537px] lg:left-[615px] ${
           doorsOpen ? "visible" : "invisible"
         }`}
         initial={{ scale: 0 }}
@@ -164,7 +164,7 @@ const Hero = () => {
             extensions designed to enhance your natural beauty and express your
             unique style.
           </p>
-          <div className="absolute top-32 left-6 flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
+          <div className="hidden absolute top-32 left-6 flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
             <a
               href="/"
               className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#ffa6c1] text-white px-3 sm:px-6 py-2 sm:py-3 rounded-2xl border-white border-2 text-sm shadow-xl sm:text-lg transition duration-300`}

@@ -4,7 +4,9 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import CarouselHairExtensionsLOGO from "@/images/logo/carouselhairextensionlogo.png";
 import Image from "next/image";
+import { User, ShoppingCart } from "lucide-react";
 import { Poppins } from "next/font/google";
+import Link from "next/link";
 
 const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
 const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
@@ -20,7 +22,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#ffc4d6] mx-auto max-w-7xl top-0 sticky z-50">
+    <header className="bg-[#f8ddee] mx-auto max-w-7xl top-0 sticky z-50">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
@@ -78,13 +80,21 @@ export default function Header() {
         </div>
 
         {/* Log in button on the far right */}
-        <div className="flex flex-1 justify-end">
-          <a
+        <div className="flex flex-1 justify-end space-x-6 pr-4">
+          {/* <a
             href="#"
             className={`${poppins_medium.className} px-3 text-xs xs:text-sm tracking-widest font-semibold leading-6 text-gray-900`}
           >
             Log in
-          </a>
+          </a> */}
+
+          <Link href="/cart">
+            <ShoppingCart size={24} />
+          </Link>
+
+          <Link href="/login">
+            <User size={24} />
+          </Link>
         </div>
       </nav>
 
