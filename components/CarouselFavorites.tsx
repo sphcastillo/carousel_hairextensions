@@ -1,5 +1,5 @@
 import Image from "next/image";
-import carouselFavoritesBackground from "@/images/homepage/FavoritesBackgroundWCurve.png";
+import carouselFavoritesBackground from "@/images/homepage/CarouselFavoritesSectionBackground.png";
 import fav1 from "@/images/homepage/favorites/fav1.png";
 import fav2 from "@/images/homepage/favorites/fav2.png";
 import fav3 from "@/images/homepage/favorites/fav3.png";
@@ -34,7 +34,7 @@ const favoriteItems = [
 function CarouselFavorites() {
   return (
     <div
-      className="py-12 sm:py-16 bg-cover bg-center bg-[#ffd6e4] "
+      className="py-12 sm:py-16 bg-[#fffdfd] "
     //   style={{
     //     backgroundImage: `url(${carouselFavoritesBackground.src})`,
     //   }}
@@ -48,7 +48,7 @@ function CarouselFavorites() {
         </p>
       </div>
 
-      <div className="px-24 mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <div className="sm:px-24 mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         {favoriteItems.map((item) => (
           <div
             key={item.id}

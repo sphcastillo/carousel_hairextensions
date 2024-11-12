@@ -61,9 +61,9 @@ export default function Feature() {
   return (
     <div
       className="py-12 sm:py-32 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${seaMossPerhaps.src})`,
-      }}
+      // style={{
+      //   backgroundImage: `url(${seaMossPerhaps.src})`,
+      // }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
@@ -92,7 +92,7 @@ export default function Feature() {
         </div>
       </div>
       <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <Image
             alt="App screenshot"
             src={GlitzFeaturette}
