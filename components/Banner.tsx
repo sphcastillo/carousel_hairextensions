@@ -1,6 +1,6 @@
 import Image from "next/image";
 import stars from "@/images/logo/pinkStars.png";
-import bannerBackground from "@/images/homepage/bannerbackground.png";
+import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackground.png";
 import LAWeekly from "@/images/homepage/banner/laWeekly.png";
 import IrvineWeekly from "@/images/homepage/banner/irvineWeekly.png";
 import TheVillageVoice from "@/images/homepage/banner/thevillagevoicelogo.png";
