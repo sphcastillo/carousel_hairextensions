@@ -66,7 +66,7 @@ export default function Header() {
               />
             </a>
           </div>
-          {/* <div className="space-x-6">
+          <div className="space-x-6">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -76,7 +76,7 @@ export default function Header() {
                 {item.name}
               </a>
             ))}
-          </div> */}
+          </div>
         </div>
 
         {/* Log in button on the far right */}
