@@ -1,14 +1,11 @@
 import Banner from "@/components/Banner";
-import BrightClouds from "@/components/BrightClouds";
-import Cloud from "@/components/Cloud";
+import CarouselFavorites from "@/components/CarouselFavorites";
 import Feature from "@/components/Feature";
 import Hero from "@/components/Hero";
 import InfoSection from "@/components/InfoSection";
-import IntroSection from "@/components/IntroSection";
 import Newsletter from "@/components/Newsletter";
 import PassionProject from "@/components/PassionProject";
 import Testimonials from "@/components/Testimonials";
-import UnevenClouds from "@/components/UnevenClouds";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,16 +13,13 @@ export default function Home() {
     <main className="max-w-7xl mx-auto bg-[#fcfcfc] custom-cursor">
       <Hero />
       <Banner />
+      <CarouselFavorites />
       <Feature />
       {/* <Hero /> */}
-      {/* <UnevenClouds /> */}
-      {/* <IntroSection /> */}
       {/* <InfoSection /> */}
-      {/* <Cloud /> */}
       {/* <PassionProject /> */}
       {/* <Testimonials /> */}
       {/* <Newsletter />  */}
-      {/* <BrightClouds /> */}
     </main>
   );
 }

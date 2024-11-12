@@ -1,5 +1,6 @@
 import Image from "next/image";
 import stars from "@/images/logo/pinkStars.png";
+import bannerBackground from "@/images/homepage/bannerbackground.png";
 import LAWeekly from "@/images/homepage/banner/laWeekly.png";
 import IrvineWeekly from "@/images/homepage/banner/irvineWeekly.png";
 import TheVillageVoice from "@/images/homepage/banner/thevillagevoicelogo.png";
@@ -13,7 +14,9 @@ const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
 
 function Banner() {
   return (
-    <div className="w-full bg-[#efcbe1] shadow-sm py-4 overflow-hidden relative">
+    <div className="w-full bg-cover bg-center shadow-sm pt-4 pb-6 overflow-hidden relative"       style={{
+      backgroundImage: `url(${bannerBackground.src})`,
+    }}>
       <div className={`${poppins_medium.className} text-sm flex items-center justify-center pb-4`}>Featured in:</div>
       <div className={`tracking-wider flex items-center text-center animate-marquee space-x-7`}>
         <Image src={LAWeekly} alt="LA Weekly" className="h-7 inline-block" />

@@ -12,6 +12,13 @@ const config: Config = {
 		screens: {
 			xxs: "414px",
 			xs: "540px",
+			md825: "825px",
+			mdPlus: "875px",
+			md925: "925px",
+			lgPlus: "1105px",
+			xl: "1175px",
+			xlPlus: "1220px",
+			maxW: "1280px",
 		},
   		keyframes: {
   			spin: {
