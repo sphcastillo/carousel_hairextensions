@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full sm:h-[500px] md:h-[620px] mdPlus:h-[800px] lgPlus:h-[595px] overflow-hidden bg-cover bg-center">
+    <div className="relative w-full sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px] overflow-hidden bg-cover bg-center">
       {/* Background Image */}
       <Image
         src={carouselHorizontalHero}
@@ -63,7 +63,7 @@ const Hero = () => {
           width={1151} 
           height={2048} 
           priority
-          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px]"
           />
       </motion.div>
 
@@ -80,7 +80,7 @@ const Hero = () => {
           width={1151}
           height={2048}
           priority
-          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px]"
+          className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px]"
         />
       </motion.div>
 
