@@ -10,7 +10,7 @@ import sydney from "@/images/homepage/testimonials/sydney.jpg";
 import amanda from "@/images/homepage/testimonials/amanda.jpg";
 import amy from "@/images/homepage/testimonials/amy.jpg";
 import hope from "@/images/homepage/testimonials/hope.jpg";
-import blankerPinkCanvas from "@/images/homepage/blankerpinkcanvas.png";
+import pinkbackgroundwithbluehues from "@/images/homepage/pinkhueswithtintofblue.png";
 
 const featuredTestimonial = {
   body: "I love my Rockwell ponytail so much! It’s incredibly difficult to find anywhere that stocks orange hair first of all, and second the magnets make it so easy to install! I was able to change my hair mid photoshoot with a minimum of fuss and the hair looks great every time with almost no effort. Brush and go!",
@@ -125,7 +125,7 @@ export default function Testimonials() {
   return (
     <div
       style={{
-        backgroundImage: `url(${blankerPinkCanvas.src})`,
+        backgroundImage: `url(${pinkbackgroundwithbluehues.src})`,
       }}
       className="relative isolate pb-32 pt-24 sm:pt-32"
     >

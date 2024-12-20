@@ -11,7 +11,7 @@ export default function Home() {
     <main className="max-w-7xl mx-auto bg-[#fcfcfc] custom-cursor">
       <Hero />
       <Banner />
-      {/* <CarouselFavorites /> */}
+      <CarouselFavorites />
       <Image 
         src={CarouselMagic}
         alt="Carousel Magic"

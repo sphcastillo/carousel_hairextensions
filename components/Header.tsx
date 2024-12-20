@@ -7,6 +7,7 @@ import Image from "next/image";
 import { User, ShoppingCart } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackground.png";
 
 const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
 const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
@@ -22,7 +23,12 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#ffC0CB] py-1 mx-auto max-w-7xl top-0 sticky z-50">
+    <header 
+      className="bg-[#ffC0CB] py-1 mx-auto max-w-7xl top-0 sticky z-50"
+      style={{
+        backgroundImage: `url(${bannerBackground.src})`,
+      }}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
@@ -66,7 +72,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="hidden space-x-6">
+          <div className="hidden space-x-6 sm:block">
             {navigation.map((item) => (
               <a
                 key={item.name}
