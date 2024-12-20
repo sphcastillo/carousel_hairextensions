@@ -14,11 +14,20 @@ const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
 
 function Banner() {
   return (
-    <div className="w-full bg-cover bg-center shadow-sm pt-4 pb-6 overflow-hidden relative"       style={{
-      backgroundImage: `url(${bannerBackground.src})`,
-    }}>
-      <div className={`${poppins_medium.className} text-sm flex items-center justify-center pb-4`}>Featured in:</div>
-      <div className={`tracking-wider flex items-center text-center animate-marquee space-x-7`}>
+    <div
+      className="w-full bg-cover bg-center shadow-sm pt-4 pb-6 overflow-hidden relative"
+      style={{
+        backgroundImage: `url(${bannerBackground.src})`,
+      }}
+    >
+      <div
+        className={`${poppins_medium.className} text-sm flex items-center justify-center pb-4`}
+      >
+        Featured in:
+      </div>
+      <div
+        className={`tracking-wider flex items-center text-center animate-marquee space-x-7`}
+      >
         <Image src={LAWeekly} alt="LA Weekly" className="h-7 inline-block" />
         <Image src={stars} alt="Stars" className="h-6 inline-block" />
         <Image
@@ -33,7 +42,6 @@ function Banner() {
           className="h-9 inline-block"
         />
         <Image src={stars} alt="Stars" className="h-6 inline-block" priority />
-
 
         <Image src={LAWeekly} alt="LA Weekly" className="h-7 inline-block" />
         <Image src={stars} alt="Stars" className="h-6 inline-block" />

@@ -11,6 +11,7 @@ import Image from "next/image";
 import stars from "@/images/logo/pinkStars.png";
 import { Lobster, Lora, Poppins } from "next/font/google";
 import seaMossPerhaps from "@/images/homepage/featureBackground.png";
+import pinkHuesBackground from "@/images/homepage/PinkhuesBackground.png";
 
 const lobster = Lobster({ weight: "400", subsets: ["latin"] });
 
@@ -60,10 +61,10 @@ const features = [
 export default function Feature() {
   return (
     <div
-      className="py-12 sm:py-32 bg-cover bg-center"
-      // style={{
-      //   backgroundImage: `url(${seaMossPerhaps.src})`,
-      // }}
+      className="pb-12 pt-10 sm:pb-32 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${pinkHuesBackground.src})`,
+      }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
@@ -75,8 +76,7 @@ export default function Feature() {
           <p
             className={`${poppins_semibold.className} mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
           >
-            Welcome to Carousel Hair Extensions: A Whimsical World of Style &
-            Beauty
+            Carousel Hair Co.
           </p>
           <p
             className={`${poppins_light.className} mt-6 text-lg leading-8 text-gray-600`}
@@ -101,8 +101,8 @@ export default function Feature() {
             className="rounded-xl shadow-2xl ring-1 ring-gray-900/10"
           />
           {/* <div aria-hidden="true" className="relative">
-              <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]" />
-            </div> */}
+            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]" />
+          </div> */}
         </div>
       </div>
       <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
