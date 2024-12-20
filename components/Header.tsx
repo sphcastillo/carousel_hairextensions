@@ -22,7 +22,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#ffC0CB] mx-auto max-w-7xl top-0 sticky z-50">
+    <header className="bg-[#ffC0CB] py-1 mx-auto max-w-7xl top-0 sticky z-50">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
@@ -66,7 +66,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="space-x-6">
+          <div className="hidden space-x-6">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -80,7 +80,7 @@ export default function Header() {
         </div>
 
         {/* Log in button on the far right */}
-        <div className="flex flex-1 justify-end space-x-6 pr-4">
+        <div className="flex flex-1 justify-end space-x-4 sm:space-x-6 pr-2 sm:pr-4">
           {/* <a
             href="#"
             className={`${poppins_medium.className} px-3 text-xs xs:text-sm tracking-widest font-semibold leading-6 text-gray-900`}
@@ -89,7 +89,9 @@ export default function Header() {
           </a> */}
 
           <Link href="/cart">
-            <ShoppingCart size={24} />
+
+              <ShoppingCart size={24}/>
+
           </Link>
 
           <Link href="/login">
