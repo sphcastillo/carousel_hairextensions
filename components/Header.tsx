@@ -5,12 +5,15 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import CarouselHairExtensionsLOGO from "@/images/logo/carouselhairextensionlogo.png";
 import Image from "next/image";
 import { User, ShoppingCart } from "lucide-react";
-import { Poppins } from "next/font/google";
+import { Raleway } from "next/font/google";
 import Link from "next/link";
 import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackground.png";
 
-const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
-const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
+// const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
+// const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
+const raleway_regular = Raleway({ weight: "400", subsets: ["latin"] });
+const raleway_semibold = Raleway({ weight: "600", subsets: ["latin"] });
+const raleway_bold = Raleway({ weight: "700", subsets: ["latin"] });
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -46,7 +49,7 @@ export default function Header() {
         </div>
 
         <div className="hidden md:flex md:gap-x-5 md:justify-start">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="#" className="-m-1.5 p-1.5 pl-6">
             <span className="sr-only">Carousel Hair Extensions</span>
             <Image
               alt="Carousel Hair Extensions"
@@ -72,12 +75,12 @@ export default function Header() {
               />
             </a>
           </div>
-          <div className="hidden space-x-6 sm:block">
+          <div className="hidden space-x-6 md:block">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`${poppins_semibold.className} text-sm tracking-wider font-semibold leading-6 text-[gray-800]`}
+                className={`${raleway_bold.className} tracking-tight text-md font-semibold leading-6 `}
               >
                 {item.name}
               </a>

@@ -57,14 +57,14 @@ const Hero = () => {
         animate={{ x: doorsOpen ? "-100%" : 0 }}
         transition={{ duration: 1.5 }}
       >
-        <Image 
-          src={furyLeft} 
-          alt="Fury Left Door" 
-          width={1151} 
-          height={2048} 
+        <Image
+          src={furyLeft}
+          alt="Fury Left Door"
+          width={1151}
+          height={2048}
           priority
           className="h-[480px] xxs:h-[500px] xs:h-[580px] sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px]"
-          />
+        />
       </motion.div>
 
       {/* Right Door */}
@@ -86,7 +86,7 @@ const Hero = () => {
 
       {/* Carousel */}
       <motion.div
-        className={`absolute inset-0 w-full h-full hidden  lg:top-[537px] lg:left-[615px] ${
+        className={`hidden absolute inset-0 w-full h-full lg:top-[537px] lg:left-[615px] ${
           doorsOpen ? "visible" : "invisible"
         }`}
         initial={{ scale: 0 }}
@@ -144,31 +144,35 @@ const Hero = () => {
         {/* Overlay with lower opacity */}
         <div className="absolute " />{" "}
         {/* This adds a semi-transparent black overlay */}
-        <div className="relative z-20">
-
+        <div className="relative z-20 hidden">
           <div className="absolute w-[200px] leading-snug left-44 top-16">
-          <h1
-            className={`${lobster.className} hidden text-[26px] text-white`}
-            // style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
-          >
-            
-            Welcome to
-          </h1>{" "} 
-          <h1 className={`${lobster.className} hidden text-[30px] text-white`}>Carousel Hair Extensions</h1>
+            <h1
+              className={`${lobster.className} text-[26px] text-white`}
+              // style={{transform: "perspective(470px) rotateX(0deg) rotateY(15deg)"}}
+            >
+              Welcome to
+            </h1>{" "}
+            <h1 className={`${lobster.className} text-[30px] text-white`}>
+              Carousel Hair Extensions
+            </h1>
           </div>
           <p
-            className={`${poppins_light.className} hidden text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-16 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
-            style={{transform: "perspective(600px) rotateX(0deg) rotateY(15deg)"}}
+            className={`${poppins_light.className} text-sm leading-relaxed sm:text-[18px] mb-3 sm:mb-6 pr-16 sm:pr-0 pl-1 sm:pl-0 sm:text-center sm:px-6 text-white`}
+            style={{
+              transform: "perspective(600px) rotateX(0deg) rotateY(15deg)",
+            }}
           >
             At Carousel Hair Extensions, we offer high-quality, custom-crafted
             extensions designed to enhance your natural beauty and express your
             unique style.
           </p>
-          <div className="hidden absolute top-32 left-6 flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
+          <div className="absolute top-32 left-6 flex items-center sm:justify-center pl-1 sm:pl-0 pb-4">
             <a
               href="/"
               className={`${poppins_medium.className} hover:bg-[#f7bacb] hover:rounded-2xl bg-[#ffa6c1] text-white px-3 sm:px-6 py-2 sm:py-3 rounded-2xl border-white border-2 text-sm shadow-xl sm:text-lg transition duration-300`}
-              style={{transform: "perspective(470px) rotateX(0deg) rotateY(1deg)"}}
+              style={{
+                transform: "perspective(470px) rotateX(0deg) rotateY(1deg)",
+              }}
             >
               Show me the magic
             </a>

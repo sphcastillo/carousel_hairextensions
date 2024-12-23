@@ -1,37 +1,26 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import blankerPinkCanvas from "@/images/homepage/blankerpinkcanvas.png";
-import fav1 from "@/images/homepage/favorites/BlondeCarouselFav.png";
-import fav2 from "@/images/homepage/favorites/pinkbrownponytail.png";
-import fav3 from "@/images/homepage/favorites/blackhairextensions.png";
 import { Lobster, Lora, Poppins } from "next/font/google";
 
 const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
 
-const favoriteItems = [
-  {
-    id: 1,
-    title: "Black Diamond",
-    price: "195",
-    src: fav1,
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "The Sandy",
-    price: "200",
-    src: fav2,
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Jem and the Holograms",
-    price: "165",
-    src: fav3,
-    link: "#",
-  },
-];
+interface Item {
+  id: number;
+  title: string;
+  price: string;
+  src: StaticImageData;
+  link: string;
+}
 
-function CarouselFavorites() {
+interface HomepageCollectionProps {
+  title: string;
+  data: Item[];
+}
+
+
+
+
+export default function HomepageCollection( { title, data } : HomepageCollectionProps) {
   return (
     <div
       className="py-4 sm:py-8 bg-[#ffC0CB] "
@@ -43,12 +32,12 @@ function CarouselFavorites() {
         <p
           className={`${poppins_semibold.className} mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
         >
-          Our Favorites
+          {title}
         </p>
       </div>
 
       <div className="sm:px-24 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {favoriteItems.map((item) => (
+        {data.map((item) => (
           <div
             key={item.id}
             className="flex flex-col items-center p-4 "
@@ -76,4 +65,3 @@ function CarouselFavorites() {
   );
 }
 
-export default CarouselFavorites;
