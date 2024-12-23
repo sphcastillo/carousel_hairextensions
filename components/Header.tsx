@@ -5,15 +5,18 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import CarouselHairExtensionsLOGO from "@/images/logo/carouselhairextensionlogo.png";
 import Image from "next/image";
 import { User, ShoppingCart } from "lucide-react";
-import { Raleway } from "next/font/google";
+import { Raleway, Dancing_Script } from "next/font/google";
 import Link from "next/link";
 import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackground.png";
+import pinkhuebackground from "@/images/squarishpinkbackground.png";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
 
-// const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
-// const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
 const raleway_regular = Raleway({ weight: "400", subsets: ["latin"] });
 const raleway_semibold = Raleway({ weight: "600", subsets: ["latin"] });
 const raleway_bold = Raleway({ weight: "700", subsets: ["latin"] });
+
+const dancing_script_semibold = Dancing_Script({ weight: "600", subsets: ["latin"] });
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -26,7 +29,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header 
+    <header
       className="bg-[#ffC0CB] py-1 mx-auto max-w-7xl top-0 sticky z-50"
       style={{
         backgroundImage: `url(${bannerBackground.src})`,
@@ -98,9 +101,7 @@ export default function Header() {
           </a> */}
 
           <Link href="/cart">
-
-              <ShoppingCart size={24}/>
-
+            <ShoppingCart size={24} />
           </Link>
 
           <Link href="/login">
@@ -114,8 +115,13 @@ export default function Header() {
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
-        <div className="fixed inset-0" />
-        <DialogPanel className="z-30 fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 " />
+        <DialogPanel
+          style={{
+            backgroundImage: `url(${pinkhuebackground.src})`,
+          }}
+          className=" z-30 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Carousel Hair Extensions</span>
@@ -137,25 +143,46 @@ export default function Header() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+            <div className="-my-6 divide-y divide-black">
+              <div className="space-y-10 py-20 sm:py-16 ">
+                {navigation.map((item, index) => (
                   <a
-                    key={item.name}
+                    key={index}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className={`${dancing_script_semibold.className} hover:rounded-2xl hover:bg-[#77c4ca] text-center -mx-3 block rounded-lg px-3 py-2 text-[22px] leading-7 text-gray-900`}
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                <div className="pb-6 pt-12 flex justify-center items-center space-x-12">
+                  <Link
+                    className="cursor-pointer hover:text-[#77c4ca]"
+                    href="https://www.instagram.com/_carouselhairextensions_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram className="h-7 w-7" />
+                  </Link>
+                  <Link
+                    className="cursor-pointer hover:text-[#77c4ca]"
+                    href="https://www.tiktok.com/@carouselhairextensions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaTiktok className="h-6 w-6 " />
+                  </Link>
+
+                  <Link
+                    className="cursor-pointer hover:text-[#77c4ca]"
+                    href="https://www.facebook.com/profile.php?id=100032460173579"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaFacebook className="h-6 w-6 " />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
