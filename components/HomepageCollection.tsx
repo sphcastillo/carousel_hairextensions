@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
-import { Lobster, Lora, Poppins } from "next/font/google";
-
-const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
+import { Raleway, Dancing_Script } from "next/font/google";
+const dancing_script_bold = Dancing_Script({ weight: "700", subsets: ["latin"] });
+const raleway_medium = Raleway({ weight: "500", subsets: ["latin"] });
 
 interface Item {
   id: number;
@@ -30,7 +30,7 @@ export default function HomepageCollection( { title, data, backgroundImage } : H
     >
       <div className="mx-auto max-w-2xl sm:text-center">
         <p
-          className={`${poppins_semibold.className} mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
+          className={`${dancing_script_bold.className} pt-6 pb-12 mt-2 text-4xl font-bold tracking-tight text-black sm:text-5xl`}
         >
           {title}
         </p>
@@ -51,11 +51,11 @@ export default function HomepageCollection( { title, data, backgroundImage } : H
               />
             </div>
 
-            <div className="p-2 text-center">
+            <div className={`${raleway_medium.className} p-2 text-center`}>
               <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
               <p className="text-xl font-medium text-black mb-4">${item.price}</p>
               <button className="text-sm tracking-wide text-white bg-black hover:bg-pink-600 py-2 px-4 rounded-full">
-                SHOP NOW
+                Add to Cart
               </button>
             </div>
           </div>

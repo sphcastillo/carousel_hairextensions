@@ -11,6 +11,22 @@ import amanda from "@/images/homepage/testimonials/amanda.jpg";
 import amy from "@/images/homepage/testimonials/amy.jpg";
 import hope from "@/images/homepage/testimonials/hope.jpg";
 import pinkbackgroundwithbluehues from "@/images/homepage/pinkhueswithtintofblue.png";
+import testimonialbg1 from "@/images/homepage/testimonials/backgrounds/testbg1.png";
+import testimonialbg2 from "@/images/homepage/testimonials/backgrounds/testbg2.png";
+import testimonialbg3 from "@/images/homepage/testimonials/backgrounds/testbg3.png";
+import testimonialbg4 from "@/images/homepage/testimonials/backgrounds/testbg4.png";
+import { Raleway, Dancing_Script } from "next/font/google";
+const dancing_script_bold = Dancing_Script({ weight: "700", subsets: ["latin"] });
+const raleway_medium = Raleway({ weight: "500", subsets: ["latin"], style: 'italic' });
+const raleway_light = Raleway({ weight: "300", subsets: ["latin"] });
+const raleway_regular = Raleway({ weight: "400", subsets: ["latin"] });
+
+const backgroundImages = [
+  testimonialbg1.src,
+  testimonialbg2.src,
+  testimonialbg3.src,
+  testimonialbg4.src,
+];
 
 const featuredTestimonial = {
   body: "I love my Rockwell ponytail so much! It’s incredibly difficult to find anywhere that stocks orange hair first of all, and second the magnets make it so easy to install! I was able to change my hair mid photoshoot with a minimum of fuss and the hair looks great every time with almost no effort. Brush and go!",
@@ -156,16 +172,20 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           {/* <h2 className="text-lg font-semibold leading-8 tracking-tight text-[#fe036a]">Happy Customers</h2> */}
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className={`${dancing_script_bold.className} mt-2 text-4xl tracking-tight text-gray-900 sm:text-5xl`}>
             Love from our Customers
-          </p>
+          </h1>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-          <figure className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
+          <figure 
+                style={{
+                  backgroundImage: `url(${testimonialbg3.src})`,
+                }}
+          className="rounded-2xl shadow-2xl ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">
             <blockquote className="p-6 text-lg font-semibold leading-7 tracking-tight text-gray-900 sm:p-12 sm:text-xl sm:leading-8">
-              <p>{`“${featuredTestimonial.body}”`}</p>
+              <p className={`${raleway_medium.className} tracking-wide`}>{`“${featuredTestimonial.body}”`}</p>
             </blockquote>
-            <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
+            <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 px-6 py-4 sm:flex-nowrap">
               <Image
                 alt="Carousel Hair Extensions testimonial author"
                 src={featuredTestimonial.author.imageUrl}
@@ -174,10 +194,10 @@ export default function Testimonials() {
                 className="h-10 w-10 flex-none rounded-full bg-gray-50"
               />
               <div className="flex-auto">
-                <div className="font-semibold">
+                <div className={`${raleway_regular.className} font-semibold`}>
                   {featuredTestimonial.author.name}
                 </div>
-                <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
+                <div className={`${raleway_light.className} text-gray-600`}>{`@${featuredTestimonial.author.handle}`}</div>
               </div>
               {/* <Image  
                   alt="" 
@@ -204,13 +224,22 @@ export default function Testimonials() {
                     "space-y-8"
                   )}
                 >
-                  {column.map((testimonial) => (
+                  {column.map((testimonial, testimonialIdx) => (
                     <figure
                       key={testimonial.author.handle}
-                      className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5"
+                      className="rounded-2xl p-6 shadow-2xl ring-1 ring-gray-900/5"
+                      style={{
+                        backgroundImage: `url(${
+                          backgroundImages[
+                            testimonialIdx % backgroundImages.length
+                          ]
+                        })`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
                     >
-                      <blockquote className="text-gray-900">
-                        <p className="line-clamp-4">{`“${testimonial.body}”`}</p>
+                      <blockquote className="text-black">
+                        <p className={`${raleway_medium.className} tracking-wide line-clamp-4`}>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
                         <Image
@@ -221,10 +250,10 @@ export default function Testimonials() {
                           className="h-10 w-10 rounded-full bg-gray-50"
                         />
                         <div>
-                          <div className="font-semibold">
+                          <div className={`${raleway_regular.className} font-semibold`}>
                             {testimonial.author.name}
                           </div>
-                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                          <div className={`${raleway_light.className} text-gray-600`}>{`@${testimonial.author.handle}`}</div>
                         </div>
                       </figcaption>
                     </figure>
