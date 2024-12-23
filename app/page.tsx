@@ -11,6 +11,8 @@ import fav3 from "@/images/homepage/favorites/blackhairextensions.png";
 import merchandise1 from '@/images/homepage/merchandise/xmasshirt.png';
 import merchandise2 from "@/images/homepage/merchandise/originalcoffin.png";
 import merchandise3 from '@/images/homepage/merchandise/halloweentshirt.png';
+import brighterPinkCanvas from "@/images/brighterpinkbackground.png";
+import alternateBrighterPinkCanvas from '@/images/squarishpinkbackground.png';
 
 const favoriteItems = [
   {
@@ -65,14 +67,14 @@ export default function Home() {
     <main className="max-w-7xl mx-auto bg-[#fcfcfc] custom-cursor">
       <Hero />
       <Banner />
-      <HomepageCollection title="Our Favorites" data={favoriteItems}/>
+      <HomepageCollection title="Our Favorites" data={favoriteItems} backgroundImage={brighterPinkCanvas}/>
       <Image 
         src={CarouselMagic}
         alt="Carousel Magic"
         className="w-full"
       />
       <Feature />
-      <HomepageCollection title="Carousel Merchandise" data={merchandiseItems}/>
+      <HomepageCollection title="Carousel Merchandise" data={merchandiseItems} backgroundImage={alternateBrighterPinkCanvas}/>
       <Testimonials />
     </main>
   );

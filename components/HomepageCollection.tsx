@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import blankerPinkCanvas from "@/images/homepage/blankerpinkcanvas.png";
 import { Lobster, Lora, Poppins } from "next/font/google";
 
 const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
@@ -15,17 +14,18 @@ interface Item {
 interface HomepageCollectionProps {
   title: string;
   data: Item[];
+  backgroundImage: StaticImageData;
 }
 
 
 
 
-export default function HomepageCollection( { title, data } : HomepageCollectionProps) {
+export default function HomepageCollection( { title, data, backgroundImage } : HomepageCollectionProps) {
   return (
     <div
       className="py-4 sm:py-8 bg-[#ffC0CB] "
       style={{
-        backgroundImage: `url(${blankerPinkCanvas.src})`,
+        backgroundImage: `url(${backgroundImage.src})`,
       }}
     >
       <div className="mx-auto max-w-2xl sm:text-center">
