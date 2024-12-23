@@ -1,9 +1,10 @@
 import footerbackground from "@/images/footerbackground.png";
+import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackground.png";
 
 const navigation = [
   {
     name: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=100032460173579",
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -69,7 +70,7 @@ export default function Footer() {
     <footer
       className="bg-[#ffC0CB] "
       style={{
-        backgroundImage: `url(${footerbackground.src})`,
+        backgroundImage: `url(${bannerBackground.src})`,
       }}
     >
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
