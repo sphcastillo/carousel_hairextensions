@@ -96,6 +96,8 @@ export default function Footer() {
             <Link
               href="https://www.builtbysophia.com/"
               className="pl-1 hover:text-[#77c4ca] italic"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Built By Sophia
             </Link>
