@@ -13,10 +13,12 @@ import { FaTiktok, FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 
 const raleway_regular = Raleway({ weight: "400", subsets: ["latin"] });
+const raleway_medium = Raleway({ weight: "500", subsets: ["latin"] });
 const raleway_semibold = Raleway({ weight: "600", subsets: ["latin"] });
 const raleway_bold = Raleway({ weight: "700", subsets: ["latin"] });
 
 const dancing_script_semibold = Dancing_Script({ weight: "600", subsets: ["latin"] });
+const dancing_script_bold = Dancing_Script({ weight: "700", subsets: ["latin"] });
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -30,37 +32,39 @@ export default function Header() {
 
   return (
     <header
-      className="bg-[#ffC0CB] py-1 mx-auto max-w-7xl top-0 sticky z-50"
-      style={{
-        backgroundImage: `url(${bannerBackground.src})`,
-      }}
+      className="z-40 mx-auto max-w-7xl top-0 sticky "
+
     >
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-evenly py-2 lg:px-8"
+        className="mx-auto pt-3 pb-2  bg-[#ffC0CB] z-40 flex max-w-7xl items-center justify-evenly lg:px-8"
+        style={{
+          backgroundImage: `url(${bannerBackground.src})`,
+        }}
       >
-        {/* Bars3Icon button on the far left */}
+
         <div className="flex md:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="inline-flex items-center justify-center rounded-md p-2.5 text-black"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            <Bars3Icon aria-hidden="true" className="h-6 w-6 text-black" />
           </button>
         </div>
 
         <div className="hidden md:flex md:gap-x-5 md:justify-start">
           <a href="#" className="-m-1.5 p-1.5 pl-6">
             <span className="sr-only">Carousel Hair Extensions</span>
-            <Image
+            {/* <Image
               alt="Carousel Hair Extensions"
               src={CarouselHairExtensionsLOGO}
               className=""
               width={200}
               height={170}
-            />
+            /> */}
+            <h2 className={`${dancing_script_bold.className} text-xl xs:text-2xl`}>Carousel Hair Extensions</h2>
           </a>
         </div>
 
@@ -69,21 +73,22 @@ export default function Header() {
           <div className="md:hidden">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Carousel Hair Extensions</span>
-              <Image
+              {/* <Image
                 alt="Carousel Hair Extensions"
                 src={CarouselHairExtensionsLOGO}
                 className=""
                 width={200}
                 height={170}
-              />
+              /> */}
+              <h2 className={`${dancing_script_bold.className} text-xl xs:text-2xl`}>Carousel Hair Extensions</h2> 
             </a>
           </div>
           <div className="hidden space-x-6 md:block">
-            {navigation.map((item) => (
+            {navigation.map((item, index) => (
               <a
-                key={item.name}
+                key={index}
                 href={item.href}
-                className={`${raleway_bold.className} tracking-tight text-md font-semibold leading-6 `}
+                className={`${raleway_medium.className} text-md  leading-6 `}
               >
                 {item.name}
               </a>
@@ -91,47 +96,39 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Log in button on the far right */}
-        <div className="flex flex-1 justify-end space-x-4 sm:space-x-6 pr-2 sm:pr-4">
-          {/* <a
-            href="#"
-            className={`${poppins_medium.className} px-3 text-xs xs:text-sm tracking-widest font-semibold leading-6 text-gray-900`}
-          >
-            Log in
-          </a> */}
+        <div className="flex flex-1 justify-end space-x-4 sm:space-x-6 pr-3 sm:pr-4">
+
 
           <Link href="/cart">
             <ShoppingCart size={24} />
           </Link>
 
-          <Link href="/login">
-            <User size={24} />
-          </Link>
         </div>
       </nav>
 
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        className="lg:hidden z-50"
       >
         <div className="fixed inset-0 " />
         <DialogPanel
           style={{
             backgroundImage: `url(${pinkhuebackground.src})`,
           }}
-          className=" z-30 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          className=" z-40 fixed inset-y-0 right-0 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Carousel Hair Extensions</span>
-              <Image
+              {/* <Image
                 alt=""
                 src={CarouselHairExtensionsLOGO}
                 className="h-8 w-auto"
                 width={200}
                 height={170}
-              />
+              /> */}
+              {/* <h2 className={`${dancing_script_bold.className} text-xl`}>Carousel Hair Extensions</h2> */}
             </a>
             <button
               type="button"
@@ -139,12 +136,12 @@ export default function Header() {
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+              <XMarkIcon aria-hidden="true" className="h-6 w-6 text-black hover:bg-[#77c4ca]" />
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-black">
-              <div className="space-y-10 py-20 sm:py-16 ">
+            <div className=" divide-y divide-black">
+              <div className="space-y-10 pt-10 pb-10">
                 {navigation.map((item, index) => (
                   <a
                     key={index}

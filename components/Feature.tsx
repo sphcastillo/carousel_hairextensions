@@ -1,29 +1,22 @@
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
 import GlitzFeaturette from "@/images/glitzFeaturette.jpg";
 import Image from "next/image";
-import stars from "@/images/logo/pinkStars.png";
-import { Lobster, Lora, Poppins } from "next/font/google";
-import seaMossPerhaps from "@/images/homepage/featureBackground.png";
+import vintagecarousel from "@/images/homepage/carouselVintage.png";
 import pinkHuesBackground from "@/images/homepage/PinkhuesBackground.png";
+import starisborn from "@/images/homepage/starisborn.png";
+import { Raleway, Dancing_Script } from "next/font/google";
 
-const lobster = Lobster({ weight: "400", subsets: ["latin"] });
-
-const lora_regular = Lora({ weight: "400", subsets: ["latin"] });
-
-const lora_semibold = Lora({ weight: "600", subsets: ["latin"] });
-
-const poppins_light = Poppins({ weight: "300", subsets: ["latin"] });
-
-const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
-
-const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
+const raleway_light = Raleway({ weight: "300", subsets: ["latin"] });
+const raleway_regular = Raleway({ weight: "400", subsets: ["latin"] });
+const raleway_medium = Raleway({
+  weight: "500",
+  subsets: ["latin"],
+  style: "italic",
+});
+const raleway_semibold = Raleway({
+  weight: "600",
+  subsets: ["latin"],
+  style: "italic",
+});
 
 const features = [
   {
@@ -67,20 +60,16 @@ export default function Feature() {
       }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl sm:text-center">
-          <h2
-            className={`${lobster.className} text-xl font-semibold leading-7 text-black`}
-          >
+        <div className="mx-auto pt-16 sm:pt-24 max-w-2xl sm:text-center">
+          <h2 className={` text-xl font-semibold leading-7 text-black`}>
             R.I.P. Bad Hair Days
           </h2>
           <p
-            className={`${poppins_semibold.className} mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
+            className={` mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl`}
           >
             Carousel Hair Co.
           </p>
-          <p
-            className={`${poppins_light.className} mt-6 text-lg leading-8 text-gray-600`}
-          >
+          <p className={` mt-6 text-lg leading-8 text-gray-600`}>
             Breanna has transformed her space into a whimsical oasis filled with
             vintage treasures and trinkets, where every detail tells a story.
             Here, you’ll find not only expert hair care and stunning extensions
@@ -98,7 +87,7 @@ export default function Feature() {
             src={GlitzFeaturette}
             width={2432}
             height={1442}
-            className="rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            className="z-40 rounded-xl shadow-2xl ring-1 ring-gray-900/10"
           />
           {/* <div aria-hidden="true" className="relative">
             <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%]" />
@@ -110,24 +99,41 @@ export default function Feature() {
           {features.map((feature) => (
             <div key={feature.name} className="relative pl-9">
               <dt
-                className={`${poppins_semibold.className} inline font-semibold text-gray-900`}
+                className={`${raleway_semibold.className} inline tracking-wide text-gray-900`}
               >
                 <Image
-                  src={stars}
-                  alt="Pink Stars"
-                  className="absolute left-1 top-1 h-5 w-5"
+                  src={vintagecarousel}
+                  alt="Vintage Carousel"
+                  className="absolute left-1 top-1 h-6 w-6"
                 />
                 {feature.name}
               </dt>{" "}
               <dd
-                className={`${poppins_light.className} inline text-gray-500 ml-1`}
+                className={`${raleway_regular.className} inline text-gray-900 ml-1`}
               >
                 {feature.description}
               </dd>
             </div>
           ))}
         </dl>
+
       </div>
+      <div
+          className="my-12 flex justify-center items-center w-full"
+          style={{
+            backgroundImage: `url(${starisborn.src})`,
+          }}
+        >
+          {/* Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="w-full my-12 max-w-2xl rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+          >
+            <source src="/videos/Carousel.mp4" type="video/mp4" />
+          </video>
+        </div>
     </div>
   );
 }

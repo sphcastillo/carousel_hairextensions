@@ -4,13 +4,9 @@ import bannerBackground from "@/images/homepage/banner/brightpinkBannerBackgroun
 import LAWeekly from "@/images/homepage/banner/laWeekly.png";
 import IrvineWeekly from "@/images/homepage/banner/irvineWeekly.png";
 import TheVillageVoice from "@/images/homepage/banner/thevillagevoicelogo.png";
-import { Lobster, Lora, Poppins } from "next/font/google";
+import { Raleway, Dancing_Script } from "next/font/google";
 
-const poppins_light = Poppins({ weight: "300", subsets: ["latin"] });
-
-const poppins_medium = Poppins({ weight: "500", subsets: ["latin"] });
-
-const poppins_semibold = Poppins({ weight: "600", subsets: ["latin"] });
+const raleway_medium = Raleway({ weight: "500", subsets: ["latin"] });
 
 function Banner() {
   return (
@@ -21,12 +17,12 @@ function Banner() {
       }}
     >
       <div
-        className={`${poppins_medium.className} text-sm flex items-center justify-center pb-4`}
+        className={`${raleway_medium.className} text-sm sm:text-md flex items-center justify-center pb-4`}
       >
         Featured in:
       </div>
       <div
-        className={`tracking-wider flex items-center text-center animate-marquee space-x-7`}
+        className={`py-2 sm:py-4 tracking-wider flex items-center text-center animate-marquee space-x-7`}
       >
         <Image src={LAWeekly} alt="LA Weekly" className="h-7 inline-block" />
         <Image src={stars} alt="Stars" className="h-6 inline-block" />

@@ -68,12 +68,13 @@ export default function Home() {
       <Hero />
       <Banner />
       <HomepageCollection title="Our Favorites" data={favoriteItems} backgroundImage={brighterPinkCanvas}/>
-      <Image 
+      {/* <Image 
         src={CarouselMagic}
         alt="Carousel Magic"
         className="w-full"
-      />
+      /> */}
       <Feature />
+
       <HomepageCollection title="Carousel Merchandise" data={merchandiseItems} backgroundImage={alternateBrighterPinkCanvas}/>
       <Testimonials />
     </main>

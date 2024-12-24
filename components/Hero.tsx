@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px] overflow-hidden bg-cover bg-center">
+    <div className="z-30 relative w-full sm:h-[500px] md:h-[620px] mdPlus:h-[670px] md925:h-[655px] lgPlus:h-[660px] overflow-hidden bg-cover bg-center">
       {/* Background Image */}
       <Image
         src={carouselHorizontalHero}
